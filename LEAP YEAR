@@ -1,0 +1,19 @@
+package JAVA;
+import java.util.Scanner;
+public class LEAP {
+	public static void main(String args[]) {
+		int year;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("year = ");
+		year=scan.nextInt();
+		if(year%4==0 && year%100!=0 || year%400==0)
+		{
+			System.out.println("04 / 11/ "+year + "  is leap year");
+		}
+		else
+		{
+			System.out.println("the given year is not an leap year");
+		}
+	}
+
+}

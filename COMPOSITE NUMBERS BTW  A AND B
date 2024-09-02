@@ -1,0 +1,23 @@
+public static void main(String[] args) {
+    int A = 12; 
+    int B = 19; 
+
+    System.out.print("Composite numbers between " + A + " and " + B + " are: ");
+
+    for (int num = A; num <= B; num++) {
+        boolean isComposite = false; 
+
+        if (num > 1) { 
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    isComposite = true; 
+                    break;
+                }
+            }
+        }
+
+        if (isComposite) {
+            System.out.print(num + " ");
+        }
+    }
+}

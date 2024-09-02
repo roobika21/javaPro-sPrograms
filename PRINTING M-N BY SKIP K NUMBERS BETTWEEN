@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SkipNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input: Get the values of M, N, and K from the user
+        System.out.print("Enter the value of M: ");
+        int M = input.nextInt();
+
+        System.out.print("Enter the value of N: ");
+        int N = input.nextInt();
+
+        System.out.print("Enter the value of K: ");
+        int K = input.nextInt();
+
+        // Loop to print the numbers from M to N, skipping K numbers in between
+        for (int i = M; i <= N; i += (K + 1)) {
+            System.out.print(i);
+
+            // Print a comma and space if there are more numbers to print
+            if (i + (K + 1) <= N) {
+                System.out.print(", ");
+            }
+        }
+
+        System.out.println();  // Print a new line at the end
+    }
+}

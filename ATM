@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class ATM {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalAmount = 0;
+
+        // Loop through four denominations
+        for (int i = 1; i <= 4; i++) {
+            System.out.print("Enter the " + i + "th Denomination: ");
+            int denomination = scanner.nextInt();
+
+            System.out.print("Enter the " + i + "th Denomination number of notes: ");
+            int numberOfNotes = scanner.nextInt();
+
+            // Calculate the amount for this denomination and add to total amount
+            totalAmount += denomination * numberOfNotes;
+        }
+
+        // Output the total available balance
+        System.out.println("Total Available Balance in ATM: " + totalAmount);
+    }
+}

@@ -1,0 +1,40 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Get the number of names from the user
+        System.out.print("Enter the number of names: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();  // Consume the newline character
+
+        // Input: Get the names from the user
+        String[] names = new String[n];
+        System.out.println("Enter the names:");
+        for (int i = 0; i < n; i++) {
+            names[i] = scanner.nextLine();
+        }
+
+        // Input: Get the sorting order (Ascending/Descending) from the user
+        System.out.print("Enter the order (A for Ascending, D for Descending): ");
+        char order = scanner.next().charAt(0);
+
+        // Sort the names array based on the user's choice
+        if (order == 'A' || order == 'a') {
+            Arrays.sort(names);
+        } else if (order == 'D' || order == 'd') {
+            Arrays.sort(names, (a, b) -> b.compareTo(a));
+        } else {
+            System.out.println("Invalid order choice.");
+            return;
+        }
+
+        // Output: Display the sorted names
+        System.out.println("Sorted names:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}

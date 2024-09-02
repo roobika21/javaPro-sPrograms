@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Palindrome{
+  public static void main(String args[]){
+    Scanner scan= new Scanner(System.in);
+    System.out.println("Enter choice:");
+    int choice=scan.nextInt();
+    scan.nextLine();
+    switch(choice){
+      case 1:
+        System.out.println("ENter String:");
+        String input=scan.nextLine();
+        String reverse= new StringBuilder(input).reverse().toString();
+        if(input.equalsIgnoreCase(reverse)){
+          System.out.println("It is pallindrome");
+        }
+        else{
+          System.out.println("It is not a pallindrome");
+        }
+        break;
+      case 2:
+        System.out.println("ENter number:");
+        String inputn=scan.nextLine();
+        String reversen= new StringBuilder(inputn).reverse().toString();
+        if(inputn.equals(reversen)){
+          System.out.println("It is pallindrome");
+        }
+        else{
+          System.out.println("It is not a pallindrome");
+        }
+        break;
+      default:
+      System.out.println("Invalid choice");
+      break;
+    }
+  }
+}

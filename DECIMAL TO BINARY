@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class DecimalToBinaryAndReverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+
+        String binaryString = "";
+        int num = decimalNumber;
+        
+        while (num > 0) {
+            int remainder = num % 2;
+            binaryString = remainder + binaryString; 
+            num = num / 2;
+        }
+
+        System.out.println("Binary representation: " + binaryString);
+
+        String reversedBinaryString = "";
+        int length = binaryString.length();
+        int index = length - 1;
+
+        while (index >= 0) {
+            reversedBinaryString += binaryString.charAt(index);
+            index--;
+        }
+
+        System.out.println("Reversed binary representation: " + reversedBinaryString);
+
+        
+    }
+}

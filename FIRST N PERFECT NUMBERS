@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class PerfectNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Get the value of n from the user
+        System.out.print("Enter the value of N: ");
+        int n = scanner.nextInt();
+
+        // Check if the input is a valid positive integer
+        if (n <= 0) {
+            System.out.println("Please enter a positive integer greater than 0.");
+            return;
+        }
+
+        System.out.println("First " + n + " perfect numbers are:");
+
+        int count = 0; // To keep track of how many perfect numbers have been found
+        int num = 1;   // To start checking for perfect numbers from 1
+
+        // Loop until we find n perfect numbers
+        while (count < n) {
+            int sum = 0; // To store the sum of divisors
+            // Find all divisors of the number and sum them up
+            for (int i = 1; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    sum += i;
+                }
+            }
+
+            // A number is perfect if it equals the sum of its divisors
+            if (sum == num) {
+                System.out.print(num + " ");
+                count++;
+            }
+            
+            num++;
+        }
+
+        scanner.close();
+    }
+}

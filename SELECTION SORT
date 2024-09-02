@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class SelectionSort {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Input: Get the size of the array from the user
+        System.out.print("Enter the number of elements in the array: ");
+        int n = scanner.nextInt();
+        int[] array = new int[n];
+        // Input: Get the array elements from the user
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+        // Selection Sort algorithm
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // Swap the found minimum element with the first element of the unsorted part
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
+        }
+        // Output: Print the sorted array
+        System.out.println("Sorted array:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+    }
+}

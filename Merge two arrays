@@ -1,0 +1,45 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Input: Get the first sorted array from the user
+        System.out.print("Enter the number of elements in the first array: ");
+        int n1 = scanner.nextInt();
+        int[] array1 = new int[n1];
+        System.out.println("Enter " + n1 + " sorted elements for the first array:");
+        for (int i = 0; i < n1; i++) {
+            array1[i] = scanner.nextInt();
+        }
+        // Input: Get the second Sorted array from the user
+        System.out.print("Enter the number of elements in the second array: ");
+        int n2 = scanner.nextInt();
+        int[] array2 = new int[n2];
+        System.out.println("Enter " + n2 + " sorted elements for the second array:");
+        for (int i = 0; i < n2; i++) {
+            array2[i] = scanner.nextInt();
+        }
+        // Initialize the merged array
+        int[] mergedArray = new int[n1 + n2];
+        // Indices for traversing array1, array2, and mergedArray
+        int i = 0, j = 0, k = 0;
+        // Merge the arrays by comparing elements from both arrays
+        while (i < n1 && j < n2) {
+            if (array1[i] <= array2[j]) {
+                mergedArray[k++] = array1[i++];
+            } else {
+                mergedArray[k++] = array2[j++];
+            }
+        }
+        // Copy any remaining elements of array1 (if any)
+        while (i < n1) {
+            mergedArray[k++] = array1[i++];
+        }
+        // Copy any remaining elements of array2 (if any)
+        while (j < n2) {
+            mergedArray[k++] = array2[j++];
+        }
+        // Output: Print the merged sorted array
+        System.out.println("Merged Array: " + Arrays.toString(mergedArray));
+    }
+}

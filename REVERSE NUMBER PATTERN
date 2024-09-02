@@ -1,0 +1,30 @@
+package JAVA;
+import java.util.Scanner;
+public class PATTERN {
+	public static void main(String args[])
+		{
+			int max,num,i,j;
+			Scanner scan= new Scanner(System.in);
+			System.out.println("values");
+			max=scan.nextInt();
+			num=scan.nextInt();
+			for(i=1;i<=max;i++)
+			{
+				for(j=1;j<=i;j++)
+				{
+					System.out.print(num + " ");
+				}
+				System.out.println();
+			}
+			
+			for(i=max-1;i>=1;i--)
+			{
+				for(j=1;j<=i;j++)
+				{
+					System.out.print(num+ " ");
+				}
+				System.out.println();
+			}
+		}
+
+	}

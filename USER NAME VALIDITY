@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Reverse{
+  public static void main(String args[]){
+    String username1,username2;
+    Scanner scan=new Scanner(System.in);
+    System.out.println("Enter username");
+    username1=scan.nextLine();
+    System.out.println("Re=enter the user name:");
+    username2=scan.nextLine();
+    if(username1.equals(username2)){
+      System.out.println("Valid");
+    }
+    else{
+      System.out.println("Invalid");
+    }
+  }
+}
